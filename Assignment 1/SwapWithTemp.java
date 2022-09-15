@@ -1,6 +1,15 @@
-public class Main {
+import java.util.Scanner;
+
+public class SwapWithTemp {
     public static void main(String[] args) {
-        int num1 = 13, num2 = 38, temp;
+        Scanner scanner = new Scanner(System.in);
+        int num1, num2, temp;
+
+        num1 = scanner.nextInt();
+        num2 = scanner.nextInt();
+
+        // close scanner to avoid resources leak
+        scanner.close();
         
         System.out.println("Before Swapping:");
         System.out.println("Num1: " + num1 + " Num2: " + num2);

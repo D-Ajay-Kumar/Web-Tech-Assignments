@@ -1,10 +1,19 @@
-public class Main {
+import java.util.Scanner;
+
+public class ProductRemainder {
     public static void main(String[] args) {
-        int num1 = 10, num2 = 3;
+        Scanner scanner = new Scanner(System.in);
+        int num1, num2;
+
+        num1 = scanner.nextInt();
+        num2 = scanner.nextInt();
+
+        // close scanner to avoid resources leak
+        scanner.close();
         
         double quotient, remainder;
         
-        // convert one number to double to get 
+        // convert one int to double to get 
         // double as result
         quotient = (double) num1/num2;
         

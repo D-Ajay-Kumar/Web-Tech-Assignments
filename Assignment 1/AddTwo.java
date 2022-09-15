@@ -1,6 +1,15 @@
-public class Main {
+import java.util.Scanner;
+
+public class AddTwo {
   public static void main(String[] args) {
-    int num1 = 5, num2 = 15,sum;
+    Scanner scanner = new Scanner(System.in);
+    int num1, num2, sum;
+
+    num1 = scanner.nextInt();
+    num2 = scanner.nextInt();
+
+    // close scanner to avoid resources leak
+    scanner.close();
 
     //calculating the sum of num1 and num2 and
     //storing the result in the variable sum
