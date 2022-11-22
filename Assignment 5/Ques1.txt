@@ -1,0 +1,1 @@
+We cannot have one class inherit from multiple classes as multiple inheritance is not supported in Java.

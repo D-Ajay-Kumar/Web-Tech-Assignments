@@ -1,0 +1,1 @@
+final static means that value can be initialized within static{} block and once it is initialized it cannot be changed. It is a way to create constant value.

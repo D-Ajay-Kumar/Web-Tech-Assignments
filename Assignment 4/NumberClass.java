@@ -1,50 +1,47 @@
+import java.lang.Math.*;
+import java.lang.Number.*;
 import java.util.Scanner;
 
-class Number {
-    private double value;
+class NumberClass {
+    private double double_val;
 
-    public Number(double d) {
-        value = d;
+    public NumberClass(double d) {
+        double_val = d;
     }
 
     public boolean isZero() {
-        if (value == 0.0) {
+        if (double_val == 0.0)
             return true;
-        } else {
+        else
             return false;
-        }
     }
 
     public boolean isPositive() {
-        if (value > 0.0) {
+        if (double_val > 0.0)
             return true;
-        } else {
+        else
             return false;
-        }
     }
 
     public boolean isNegative() {
-        if (value < 0.0) {
+        if (double_val < 0.0)
             return true;
-        } else {
+        else
             return false;
-        }
     }
 
     public boolean isodd() {
-        if (value % 2 != 0.0) {
+        if (double_val % 2 != 0.0)
             return true;
-        } else {
+        else
             return false;
-        }
     }
 
     public boolean isEven() {
-        if (value % 2 == 0.0) {
+        if (double_val % 2 == 0.0)
             return true;
-        } else {
+        else
             return false;
-        }
     }
 
     public boolean isPrime(int n) {
@@ -52,21 +49,18 @@ class Number {
             return false;
 
         // Check from 2 to square root of n
-        for (int i = 2; i <= Math.sqrt(n); i++) {
-            if (n % i == 0) {
+        for (int i = 2; i <= Math.sqrt(n); i++)
+            if (n % i == 0)
                 return false;
-            }
-        }
 
         return true;
     }
 
     public boolean isAmstrong() {
-        if (value == 0.0) {
+        if (double_val == 0.0)
             return true;
-        } else {
+        else
             return false;
-        }
     }
 
     public int sumDigits(int n) {
@@ -88,12 +82,12 @@ class Number {
     }
 
     public double getSqr() {
-        double d = value * value;
+        double d = double_val * double_val;
         return d;
     }
 
     public double getSqrt() {
-        double d = Math.sqrt(value);
+        double d = Math.sqrt(double_val);
         return d;
     }
 
@@ -106,30 +100,30 @@ class Number {
         return (num == 1 || num == 0) ? 1 : num * getFactorial(num - 1);
 
     }
-}
 
-class NumberClass {
-        public static void main(String args[]) {
-        Scanner scanner = new Scanner(System.in);
-        scanner.close();
+    public static void main(String args[]) {
+        Scanner input = new Scanner(System.in);
+        double double_val = input.nextDouble();
+        input.close();
 
-        double value = scanner.nextDouble();
+        NumberClass mynum = new NumberClass(double_val);
 
-        Number number = new Number(value);
+        int num = (int) double_val;
 
-        int num = (int) value;
-        System.out.println("isZero " + number.isZero());
-        System.out.println("isPositive " + number.isPositive());
-        System.out.println("isNegative " + number.isNegative());
-        System.out.println("isOdd " + number.isodd());
-        System.out.println("isEven " + number.isEven());
-        System.out.println("isPrime " + number.isPrime(num));
-        System.out.println("getFactorial " + number.getFactorial(num));
-        System.out.println("getSqrt " + number.getSqrt());
-        System.out.println("getSqr " + number.getSqr());
-        System.out.println("sumDigits " + number.sumDigits(num));
-        System.out.println("getReverse " + number.getReverse(num));
-        number.dispBinary(num);
-        System.out.println(" isPrime " + number.isPrime(num));
+        System.out.println("isZero " + mynum.isZero());
+        System.out.println("isPositive " + mynum.isPositive());
+        System.out.println("isNegative " + mynum.isNegative());
+        System.out.println("isOdd " + mynum.isodd());
+        System.out.println("isEven " + mynum.isEven());
+        System.out.println("isPrime " + mynum.isPrime(num));
+        System.out.println("getFactorial " + mynum.getFactorial(num));
+        System.out.println("getSqrt " + mynum.getSqrt());
+        System.out.println("getSqr " + mynum.getSqr());
+        System.out.println("sumDigits " + mynum.sumDigits(num));
+        System.out.println("getReverse " + mynum.getReverse(num));
+
+        mynum.dispBinary(num);
+        
+        System.out.println(" isPrime " + mynum.isPrime(num));
     }
 }
